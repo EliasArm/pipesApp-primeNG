@@ -3,17 +3,83 @@
 </p-panel>
 
 <div class="grid">
-  <div class="col-12 md:col-4">
-    <p-card header="uppercase"> {{ nameLower | uppercase }} </p-card>
+  <div class="col-12">
+    <p-card header="Original text"> {{ fullName }} </p-card>
   </div>
   <div class="col-12 md:col-4">
-    <p-card header="lowercase"> {{ nameUpper | lowercase }} </p-card>
+    <p-card header="uppercase"> {{ fullName | uppercase }} </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="lowercase"> {{ fullName | lowercase }} </p-card>
   </div>
   <div class="col-12 md:col-4">
     <p-card header="titlecase"> {{ fullName | titlecase }} </p-card>
   </div>
 
-  <div class="col-12 md:col-6">
+  <div class="col-12">
+    <p-card header="Date">
+      <div class="surface-overlay border-round border-1 my-3 p-3">
+        <p>fecha</p>
+        <ul class="list-none">
+          <li>{{ customDate }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date</p>
+        <ul class="list-none">
+          <li>{{ customDate | date }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'short'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "short" }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'long'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "long" }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'MMMM'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "MMMM" | titlecase }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'MMMM dd, yyyy'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "MMMM dd, yyyy " | titlecase }}</li>
+        </ul>
+      </div>
+
+      <div class="surface-overlay border-round border-1 my-3 p-3">
+        <p>fecha | date:'long'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "long" }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'long':'GMT-4'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "long" : "GMT-4" }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'long':'':'es-MX'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "long" : "" : "es-MX" }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'long':'':'en-US'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "long" : "" : "en-US" }}</li>
+        </ul>
+        <hr />
+        <p>fecha | date:'long':'':'fr-CA'</p>
+        <ul class="list-none">
+          <li>{{ customDate | date : "long" : "" : "fr-CA" }}</li>
+        </ul>
+      </div>
+    </p-card>
+  </div>
+
+  <!-- <div class="col-12 md:col-6">
     <p-card header="Date">
       <ol>
         <li>Fecha</li>
@@ -52,5 +118,5 @@
         <li>{{ customDate | date : "long" : "" : "fr-CA" }}</li>
       </ol>
     </p-card>
-  </div>
+  </div> -->
 </div>
