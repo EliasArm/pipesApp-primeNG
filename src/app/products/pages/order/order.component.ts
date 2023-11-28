@@ -9,28 +9,11 @@ import { MenuItem } from 'primeng/api';
 })
 export class OrderComponent {
 
-  public items: MenuItem[] = [];
+  public isUpperCase: boolean = false;
 
-ngOnInit() {
-    this.items = [
-        {
-            label: 'Update',
-            icon: 'pi pi-refresh'
-        },
-        {
-            label: 'Delete',
-            icon: 'pi pi-times'
-        },
-        {
-            label: 'Angular',
-            icon: 'pi pi-external-link',
-            url: 'http://angular.io'
-        },
-        {
-            label: 'Router',
-            icon: 'pi pi-upload',
-            routerLink: '/fileupload'
-        }
-    ];
-}
+  toggleUpperCase(): void{
+    this.isUpperCase = !this.isUpperCase;
+
+  }
+
 }
