@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 import { Color, Hero } from '../../interfaces/hero.interface';
 
 @Component({
